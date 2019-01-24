@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22AB6AB421DD6E860075A437 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22AB6AB321DD6E860075A437 /* main.cpp */; };
+		22F6B92C21F9B72F00652D5F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6B92B21F9B72F00652D5F /* main.swift */; };
+		22F6B93721F9B7CF00652D5F /* test_Qvec_swift_pp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6B93621F9B7CF00652D5F /* test_Qvec_swift_pp.swift */; };
+		22F6B94321F9B80000652D5F /* td_Qvec_post_process.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22F6B94221F9B80000652D5F /* td_Qvec_post_process.cpp */; };
+		22F6B94E21F9B8C900652D5F /* PostProcessing_Dims.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22F6B94821F9B8C900652D5F /* PostProcessing_Dims.cpp */; };
+		22F6B94F21F9B8C900652D5F /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22F6B94921F9B8C900652D5F /* CMakeLists.txt */; };
+		22F6B95021F9B8C900652D5F /* main_Qvec_pp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22F6B94D21F9B8C900652D5F /* main_Qvec_pp.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -20,15 +25,58 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		22F6B92721F9B72F00652D5F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		22AB6AB021DD6E860075A437 /* TD-Qvec-post-process */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "TD-Qvec-post-process"; sourceTree = BUILT_PRODUCTS_DIR; };
-		22AB6AB321DD6E860075A437 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		22F6B92921F9B72F00652D5F /* td_Qvec_swift_pp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = td_Qvec_swift_pp; sourceTree = BUILT_PRODUCTS_DIR; };
+		22F6B92B21F9B72F00652D5F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		22F6B93421F9B7CF00652D5F /* test_Qvec_swift_pp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = test_Qvec_swift_pp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22F6B93621F9B7CF00652D5F /* test_Qvec_swift_pp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_Qvec_swift_pp.swift; sourceTree = "<group>"; };
+		22F6B93821F9B7CF00652D5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22F6B94021F9B80000652D5F /* td_Qvec_post_process.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = td_Qvec_post_process.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22F6B94221F9B80000652D5F /* td_Qvec_post_process.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = td_Qvec_post_process.cpp; sourceTree = "<group>"; };
+		22F6B94421F9B80000652D5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22F6B94821F9B8C900652D5F /* PostProcessing_Dims.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PostProcessing_Dims.cpp; sourceTree = "<group>"; };
+		22F6B94921F9B8C900652D5F /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		22F6B94A21F9B8C900652D5F /* PostProcessing_Dims.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PostProcessing_Dims.hpp; sourceTree = "<group>"; };
+		22F6B94B21F9B8C900652D5F /* Base_Dims.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Base_Dims.hpp; sourceTree = "<group>"; };
+		22F6B94C21F9B8C900652D5F /* define_typealias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = define_typealias.h; sourceTree = "<group>"; };
+		22F6B94D21F9B8C900652D5F /* main_Qvec_pp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main_Qvec_pp.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		22AB6AAD21DD6E860075A437 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22F6B92621F9B72F00652D5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22F6B93121F9B7CF00652D5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22F6B93D21F9B80000652D5F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,7 +89,10 @@
 		22AB6AA721DD6E860075A437 = {
 			isa = PBXGroup;
 			children = (
-				22AB6AB221DD6E860075A437 /* TD-Qvec-post-process */,
+				22AB6AB221DD6E860075A437 /* td_Qvec_post_process */,
+				22F6B94121F9B80000652D5F /* test_td_Qvec_post_process */,
+				22F6B92A21F9B72F00652D5F /* td_Qvec_swift_pp */,
+				22F6B93521F9B7CF00652D5F /* test_td_Qvec_swift_pp */,
 				22AB6AB121DD6E860075A437 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,16 +101,50 @@
 			isa = PBXGroup;
 			children = (
 				22AB6AB021DD6E860075A437 /* TD-Qvec-post-process */,
+				22F6B92921F9B72F00652D5F /* td_Qvec_swift_pp */,
+				22F6B93421F9B7CF00652D5F /* test_Qvec_swift_pp.xctest */,
+				22F6B94021F9B80000652D5F /* td_Qvec_post_process.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		22AB6AB221DD6E860075A437 /* TD-Qvec-post-process */ = {
+		22AB6AB221DD6E860075A437 /* td_Qvec_post_process */ = {
 			isa = PBXGroup;
 			children = (
-				22AB6AB321DD6E860075A437 /* main.cpp */,
+				22F6B94921F9B8C900652D5F /* CMakeLists.txt */,
+				22F6B94C21F9B8C900652D5F /* define_typealias.h */,
+				22F6B94B21F9B8C900652D5F /* Base_Dims.hpp */,
+				22F6B94A21F9B8C900652D5F /* PostProcessing_Dims.hpp */,
+				22F6B94821F9B8C900652D5F /* PostProcessing_Dims.cpp */,
+				22F6B94D21F9B8C900652D5F /* main_Qvec_pp.cpp */,
 			);
-			path = "TD-Qvec-post-process";
+			path = td_Qvec_post_process;
+			sourceTree = "<group>";
+		};
+		22F6B92A21F9B72F00652D5F /* td_Qvec_swift_pp */ = {
+			isa = PBXGroup;
+			children = (
+				22F6B92B21F9B72F00652D5F /* main.swift */,
+			);
+			path = td_Qvec_swift_pp;
+			sourceTree = "<group>";
+		};
+		22F6B93521F9B7CF00652D5F /* test_td_Qvec_swift_pp */ = {
+			isa = PBXGroup;
+			children = (
+				22F6B93621F9B7CF00652D5F /* test_Qvec_swift_pp.swift */,
+				22F6B93821F9B7CF00652D5F /* Info.plist */,
+			);
+			path = test_td_Qvec_swift_pp;
+			sourceTree = "<group>";
+		};
+		22F6B94121F9B80000652D5F /* test_td_Qvec_post_process */ = {
+			isa = PBXGroup;
+			children = (
+				22F6B94221F9B80000652D5F /* td_Qvec_post_process.cpp */,
+				22F6B94421F9B80000652D5F /* Info.plist */,
+			);
+			path = test_td_Qvec_post_process;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,16 +167,78 @@
 			productReference = 22AB6AB021DD6E860075A437 /* TD-Qvec-post-process */;
 			productType = "com.apple.product-type.tool";
 		};
+		22F6B92821F9B72F00652D5F /* td_Qvec_swift_pp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22F6B92D21F9B72F00652D5F /* Build configuration list for PBXNativeTarget "td_Qvec_swift_pp" */;
+			buildPhases = (
+				22F6B92521F9B72F00652D5F /* Sources */,
+				22F6B92621F9B72F00652D5F /* Frameworks */,
+				22F6B92721F9B72F00652D5F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = td_Qvec_swift_pp;
+			productName = td_Qvec_swift_pp;
+			productReference = 22F6B92921F9B72F00652D5F /* td_Qvec_swift_pp */;
+			productType = "com.apple.product-type.tool";
+		};
+		22F6B93321F9B7CF00652D5F /* test_Qvec_swift_pp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22F6B93921F9B7CF00652D5F /* Build configuration list for PBXNativeTarget "test_Qvec_swift_pp" */;
+			buildPhases = (
+				22F6B93021F9B7CF00652D5F /* Sources */,
+				22F6B93121F9B7CF00652D5F /* Frameworks */,
+				22F6B93221F9B7CF00652D5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = test_Qvec_swift_pp;
+			productName = test_Qvec_swift_pp;
+			productReference = 22F6B93421F9B7CF00652D5F /* test_Qvec_swift_pp.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		22F6B93F21F9B80000652D5F /* td_Qvec_post_process */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22F6B94521F9B80000652D5F /* Build configuration list for PBXNativeTarget "td_Qvec_post_process" */;
+			buildPhases = (
+				22F6B93C21F9B80000652D5F /* Sources */,
+				22F6B93D21F9B80000652D5F /* Frameworks */,
+				22F6B93E21F9B80000652D5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = td_Qvec_post_process;
+			productName = td_Qvec_post_process;
+			productReference = 22F6B94021F9B80000652D5F /* td_Qvec_post_process.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		22AB6AA821DD6E860075A437 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Nile Ó Broin";
 				TargetAttributes = {
 					22AB6AAF21DD6E860075A437 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+					};
+					22F6B92821F9B72F00652D5F = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					22F6B93321F9B7CF00652D5F = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					22F6B93F21F9B80000652D5F = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
@@ -109,16 +256,62 @@
 			projectRoot = "";
 			targets = (
 				22AB6AAF21DD6E860075A437 /* TD-Qvec-post-process */,
+				22F6B92821F9B72F00652D5F /* td_Qvec_swift_pp */,
+				22F6B93321F9B7CF00652D5F /* test_Qvec_swift_pp */,
+				22F6B93F21F9B80000652D5F /* td_Qvec_post_process */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22F6B93221F9B7CF00652D5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22F6B93E21F9B80000652D5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22F6B94F21F9B8C900652D5F /* CMakeLists.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		22AB6AAC21DD6E860075A437 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22AB6AB421DD6E860075A437 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22F6B92521F9B72F00652D5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22F6B92C21F9B72F00652D5F /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22F6B93021F9B7CF00652D5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22F6B93721F9B7CF00652D5F /* test_Qvec_swift_pp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22F6B93C21F9B80000652D5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22F6B94321F9B80000652D5F /* td_Qvec_post_process.cpp in Sources */,
+				22F6B95021F9B8C900652D5F /* main_Qvec_pp.cpp in Sources */,
+				22F6B94E21F9B8C900652D5F /* PostProcessing_Dims.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = "/Users/nile/spack/opt/spack/darwin-mojave-x86_64/gcc-8.2.0/boost-1.68.0-ut63j5tdsl5n546bogscvgsvpoy56eno/include";
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -229,6 +423,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = "/Users/nile/spack/opt/spack/darwin-mojave-x86_64/gcc-8.2.0/boost-1.68.0-ut63j5tdsl5n546bogscvgsvpoy56eno/include";
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -239,15 +434,122 @@
 		22AB6AB821DD6E860075A437 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		22AB6AB921DD6E860075A437 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		22F6B92E21F9B72F00652D5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		22F6B92F21F9B72F00652D5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		22F6B93A21F9B7CF00652D5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = test_Qvec_swift_pp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "TD.test-Qvec-swift-pp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		22F6B93B21F9B7CF00652D5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = test_Qvec_swift_pp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "TD.test-Qvec-swift-pp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		22F6B94621F9B80000652D5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = td_Qvec_post_process/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "TD.td-Qvec-post-process";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		22F6B94721F9B80000652D5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = td_Qvec_post_process/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "TD.td-Qvec-post-process";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -269,6 +571,33 @@
 			buildConfigurations = (
 				22AB6AB821DD6E860075A437 /* Debug */,
 				22AB6AB921DD6E860075A437 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22F6B92D21F9B72F00652D5F /* Build configuration list for PBXNativeTarget "td_Qvec_swift_pp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22F6B92E21F9B72F00652D5F /* Debug */,
+				22F6B92F21F9B72F00652D5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22F6B93921F9B7CF00652D5F /* Build configuration list for PBXNativeTarget "test_Qvec_swift_pp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22F6B93A21F9B7CF00652D5F /* Debug */,
+				22F6B93B21F9B7CF00652D5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22F6B94521F9B80000652D5F /* Build configuration list for PBXNativeTarget "td_Qvec_post_process" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22F6B94621F9B80000652D5F /* Debug */,
+				22F6B94721F9B80000652D5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
