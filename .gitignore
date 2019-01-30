@@ -27,3 +27,4 @@ cmake_install.cmake
 a.out
 td_post_process_V4
 q4_pp_V3
+td_Qvec_post_process
