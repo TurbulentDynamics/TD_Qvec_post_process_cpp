@@ -48,8 +48,10 @@ endif()
 
 set(DEPRECATED ../deprecated/)
 
+include_directories("${CMAKE_SOURCE_DIR}")
 
-add_executable(td_Qvec_post_process PostProcessing_Dims.cpp main_Qvec_pp.cpp)
+add_library(objects OBJECT PostProcessing_Dims.cpp)
+add_executable(td_Qvec_post_process main_Qvec_pp.cpp $<TARGET_OBJECTS:objects>)
 
 target_link_libraries(td_Qvec_post_process ${MPI_LIBRARIES} ${Boost_LIBRARIES})
 target_compile_definitions(td_Qvec_post_process PRIVATE -DWITH_MPI=0)

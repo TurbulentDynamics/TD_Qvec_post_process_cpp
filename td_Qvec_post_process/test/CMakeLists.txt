@@ -32,7 +32,8 @@ add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/googletest-src
 #-------------------------------
 
 set(TESTS_SRCS
-        td_Qvec_post_process.cpp)
+        td_Qvec_post_process.cpp
+        test_PostProcessing_Dims.cpp)
 
 #-------------------------------
 # GENERAL COMPILER CONFIGURATION
@@ -48,5 +49,5 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 # targets even when INTERFACE_INCLUDE_DIRECTORIES is used.
 set(CMAKE_NO_SYSTEM_FROM_IMPORTED "1")
 
-add_executable(td_pp_tests ${TESTS_SRCS})
+add_executable(td_pp_tests ${TESTS_SRCS} $<TARGET_OBJECTS:objects>)
 target_link_libraries(td_pp_tests gmock gmock_main)
