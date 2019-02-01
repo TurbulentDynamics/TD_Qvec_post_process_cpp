@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.5.1)
 project (td-qvec-post-process)
 
 
-
 cmake_host_system_information(RESULT host_name QUERY HOSTNAME)
 if (${host_name} MATCHES "login*")
     message("Building on Cluster detected")
@@ -15,38 +14,6 @@ find_package(Git 1.6.5 REQUIRED)
 
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
-
-
-# Download and unpack googletest at configure time
-#configure_file(CMakeLists.txt.in 3rd_party/googletest-download/CMakeLists.txt)
-#execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
-#    RESULT_VARIABLE result
-#    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/3rd_party/googletest-download )
-#if(result)
-#    message(STATUS "CMake step for googletest failed: ${result}")
-#endif()
-#execute_process(COMMAND ${CMAKE_COMMAND} --build .
-#    RESULT_VARIABLE result
-#    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/3rd_party/googletest-download )
-#if(result)
-#    message(STATUS "Build step for googletest failed: ${result}")
-#endif()
-
-# Prevent overriding the parent project's compiler/linker
-# settings on Windows
-#set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-
-# Add googletest directly to our build. This defines
-# the gtest and gtest_main targets.
-#add_subdirectory(${CMAKE_BINARY_DIR}/3rd_party/googletest-src
-#    ${CMAKE_BINARY_DIR}/googletest-build
-#    EXCLUDE_FROM_ALL)
-
-
-
-
-
-
 
 
 include(CheckCXXCompilerFlag)
@@ -73,19 +40,29 @@ endif()
 if (CLUSTER)
 #    set(BOOST_ROOT /boost-root)
 endif()
-find_package(Boost 1.68 REQUIRED COMPONENTS program_options)
+
+find_package(Boost 1.68 COMPONENTS program_options REQUIRED)
 if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS}) 
 endif()
 
-
-
-
 set(DEPRECATED ../deprecated/)
 
+include_directories("${CMAKE_SOURCE_DIR}")
 
-add_executable(td_Qvec_post_process PostProcessing_Dims.cpp main_Qvec_pp.cpp)
+add_library(objects OBJECT PostProcessing_Dims.cpp)
+add_executable(td_Qvec_post_process main_Qvec_pp.cpp $<TARGET_OBJECTS:objects>)
 
-target_link_libraries(td_Qvec_post_process ${MPI_LIBRARIES} ${Boost_LIBRARIES} Boost::program_options)
+target_link_libraries(td_Qvec_post_process ${MPI_LIBRARIES} ${Boost_LIBRARIES})
 target_compile_definitions(td_Qvec_post_process PRIVATE -DWITH_MPI=0)
 
+#----------------------------------
+# TESTS
+#----------------------------------
+
+option(ENABLE_TESTS "Build and install tests (default ON)" ON)
+
+if(ENABLE_TESTS)
+    enable_testing()
+    add_subdirectory("${CMAKE_SOURCE_DIR}/test")
+endif()
