@@ -13,15 +13,16 @@ plot_*
 TD-Qvec-post-process.xcodeproj/project.xcworkspace/xcuserdata/
 td_qvec_post_process.xcodeproj/xcshareddata/
 
-
-
+#googletest
+googletest-*
+td_pp_tests
 
 
 #cmake
 CMakeCache.txt
 CMakeFiles/
 Makefile
-cmake_install.cmake
+*.cmake
 
 #exe
 a.out
