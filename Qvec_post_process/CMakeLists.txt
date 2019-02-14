@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.5.1)
-project (td-qvec-post-process)
+cmake_minimum_required(VERSION 3.12.3)
+project (td_qvec_post_process)
 
 
 cmake_host_system_information(RESULT host_name QUERY HOSTNAME)
@@ -22,8 +22,8 @@ set(CMAKE_CXX_STANDARD 11)
 
 set(CMAKE_NO_SYSTEM_FROM_IMPORTED OFF)
 
-#find_package(MPI REQUIRED)
-#include_directories(SYSTEM ${MPI_INCLUDE_PATH})
+find_package(MPI)
+include_directories(SYSTEM ${MPI_INCLUDE_PATH})
 
 #Must follow MPI...
 find_package(OpenMP)
@@ -37,17 +37,16 @@ elseif(OPENMP_FOUND)
 endif()
 
 
-if (CLUSTER)
-#    set(BOOST_ROOT /boost-root)
-endif()
 
 find_package(Boost 1.68 COMPONENTS program_options REQUIRED)
 if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS}) 
 endif()
 
-set(DEPRECATED ../deprecated/)
 
+
+
+include_directories("../../Common")
 include_directories("${CMAKE_SOURCE_DIR}")
 
 add_library(objects OBJECT PostProcessing_Dims.cpp)
@@ -64,5 +63,5 @@ option(ENABLE_TESTS "Build and install tests (default ON)" ON)
 
 if(ENABLE_TESTS)
     enable_testing()
-    add_subdirectory("${CMAKE_SOURCE_DIR}/test")
+    add_subdirectory("${CMAKE_SOURCE_DIR}/tests")
 endif()
