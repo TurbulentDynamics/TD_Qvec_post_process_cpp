@@ -35,8 +35,6 @@ typedef const float let_tFlow;
 typedef int t3d;
 typedef const int let_t3d;
 
-#define t3d_pTYPE %lu
-
 
 //Type for the Geometry Properties
 typedef float tGeomShape;
@@ -49,13 +47,6 @@ typedef long int tGeomIndex;
 
 //The stepping vars
 typedef  int tStep;
-
-
-
-//#define M_PI       3.14159265358979323846  /* pi */
-//#define M_PIl      3.141592653589793238462643383279502884L /* pi */
-//#define ULONG_MAX    18446744073709551615UL
-
 
 
 #endif /* define_typealias_h */

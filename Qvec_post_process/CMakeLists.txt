@@ -17,8 +17,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ".")
 
 
 include(CheckCXXCompilerFlag)
-CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
-set(CMAKE_CXX_STANDARD 11)
+CHECK_CXX_COMPILER_FLAG("-std=c++14" COMPILER_SUPPORTS_CXX14)
+set(CMAKE_CXX_STANDARD 14)
 
 set(CMAKE_NO_SYSTEM_FROM_IMPORTED OFF)
 
@@ -45,9 +45,10 @@ endif()
 
 
 
-
-include_directories("../../Common")
 include_directories("${CMAKE_SOURCE_DIR}")
+include_directories("../../include")
+include_directories("../local_include")
+
 
 add_library(objects OBJECT PostProcessing_Dims.cpp)
 add_executable(td_Qvec_post_process main_Qvec_pp.cpp $<TARGET_OBJECTS:objects>)
@@ -59,7 +60,7 @@ target_compile_definitions(td_Qvec_post_process PRIVATE -DWITH_MPI=0)
 # TESTS
 #----------------------------------
 
-option(ENABLE_TESTS "Build and install tests (default ON)" ON)
+option(ENABLE_TESTS "Build and install tests (default OFF)" ON)
 
 if(ENABLE_TESTS)
     enable_testing()

@@ -89,7 +89,7 @@ TEST(Dims, CanSetFlowToJSONAndLoadIt) {
     ASSERT_NO_THROW(ppDim = ppHandle.get_from_json_filepath(testFile));
 
     ASSERT_THAT(ppDim.initial_rho, Eq(ppHandle.dim.initial_rho));
-    ASSERT_THAT(ppDim.Re_m_nondimensional, Eq(ppHandle.dim.Re_m_nondimensional));
+    ASSERT_THAT(ppDim.re_m_nondimensional, Eq(ppHandle.dim.re_m_nondimensional));
     ASSERT_THAT(ppDim.uav, Eq(ppHandle.dim.uav));
 }
 

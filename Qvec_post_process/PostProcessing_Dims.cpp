@@ -65,7 +65,7 @@ PP_Dims Handle_PP_Dims::get_from_json_filepath(const std::string filepath){
 
 
         d.initial_rho = jsontree.get<tFlow>("initial_rho", 0);
-        d.Re_m_nondimensional = jsontree.get<tFlow>("Re_m_nondimensional", 0);
+        d.re_m_nondimensional = jsontree.get<tFlow>("re_m_nondimensional", 0);
         d.uav = jsontree.get<tGeomShape>("uav", 0);
 
 
@@ -117,7 +117,7 @@ int Handle_PP_Dims::save_json_to_filepath(const std::string filepath){
 
 
         jsontree.put<tFlow>("initial_rho", dim.initial_rho);
-        jsontree.put<tGeomShape>("Re_m_nondimensional", dim.Re_m_nondimensional);
+        jsontree.put<tGeomShape>("re_m_nondimensional", dim.re_m_nondimensional);
         jsontree.put<tGeomShape>("uav", dim.uav);
 
 
@@ -166,7 +166,7 @@ void Handle_PP_Dims::print(){
 
 
     << " initial_rho:" << dim.initial_rho
-    << " Re_m_nondimensional:" << dim.Re_m_nondimensional
+    << " re_m_nondimensional:" << dim.re_m_nondimensional
     << " uav:" << dim.uav
 
     << std::endl;
@@ -179,7 +179,7 @@ void Handle_PP_Dims::print(){
 
 PostProcess_Data_V3 Handle_PP_Dims::read_Qvec_pp_dim_V3(const std::string dir, tGeomShape *teta) {
 
-    //Deprecated, however many files exist in archive of this type
+    //Deprecated, however many files exist in tape archive of this type
 
     PostProcess_Data_V3 q;
 

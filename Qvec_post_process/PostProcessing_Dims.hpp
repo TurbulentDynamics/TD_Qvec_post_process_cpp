@@ -52,7 +52,7 @@ struct PP_Dims {
 
 
     tFlow initial_rho = 0;
-    tFlow Re_m_nondimensional = 0;
+    tFlow re_m_nondimensional = 0;
     tGeomShape uav = 0;
 
 
@@ -124,9 +124,9 @@ public:
     }
 
     
-    void set_flow(tFlow initial_rho, tFlow Re_m_nondimensional, tGeomShape uav){
+    void set_flow(tFlow initial_rho, tFlow re_m_nondimensional, tGeomShape uav){
         dim.initial_rho = initial_rho;
-        dim.Re_m_nondimensional = Re_m_nondimensional;
+        dim.re_m_nondimensional = re_m_nondimensional;
         dim.uav = uav;
     }
 
