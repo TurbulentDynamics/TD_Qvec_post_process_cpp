@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
-#include <sys/stat.h> // mkdir  --to be replaced by boost filesystem
+#include <sys/stat.h> // mkdir  --TODO replace with boost filesystem
 
 
 #include "define_typealias.h"
@@ -123,7 +123,6 @@ public:
 
 
     //Set from file
-
     void set_from_filepath(std::string filepath){
         dim = get_from_file(filepath);
     }

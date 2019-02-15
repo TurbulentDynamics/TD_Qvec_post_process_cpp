@@ -54,20 +54,12 @@
 		222801032216CF6D00E7C419 /* tests */ = {
 			isa = PBXGroup;
 			children = (
-				222801042216CF6D00E7C419 /* googletest-src */,
 				222801132216CF6D00E7C419 /* test_PostProcessing_Dims.cpp */,
 				222801142216CF6D00E7C419 /* CMakeLists.txt */,
 				222801152216CF6D00E7C419 /* td_Qvec_post_process.cpp */,
 				222801162216CF6D00E7C419 /* googletest-download */,
 			);
 			path = tests;
-			sourceTree = "<group>";
-		};
-		222801042216CF6D00E7C419 /* googletest-src */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "googletest-src";
 			sourceTree = "<group>";
 		};
 		222801162216CF6D00E7C419 /* googletest-download */ = {
@@ -102,8 +94,8 @@
 		226D51862216CDD4002F9B75 = {
 			isa = PBXGroup;
 			children = (
-				222801242216D05300E7C419 /* local_include */,
 				222801202216CFF500E7C419 /* README.md */,
+				222801242216D05300E7C419 /* local_include */,
 				2228011F2216CF8C00E7C419 /* Qvec_post_process */,
 				222801022216CF5D00E7C419 /* TD_Qvec_post_process */,
 			);

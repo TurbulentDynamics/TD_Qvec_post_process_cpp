@@ -19,9 +19,7 @@ typedef const long int let_tNi;
 
 
 typedef float tNvec;
-#define tNvec_MPI_TYPE MPI_FLOAT
 typedef float tForce;
-#define tForce_MPI_TYPE MPI_FLOAT
 
 
 
