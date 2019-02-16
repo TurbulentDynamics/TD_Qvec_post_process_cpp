@@ -64,8 +64,8 @@ PP_Dims Handle_PP_Dims::get_from_json_filepath(const std::string filepath){
         d.teta = jsontree.get<tGeomShape>("teta", 0);
 
 
-        d.initial_rho = jsontree.get<tFlow>("initial_rho", 0);
-        d.re_m_nondimensional = jsontree.get<tFlow>("re_m_nondimensional", 0);
+        d.initial_rho = jsontree.get<tQvec>("initial_rho", 0);
+        d.re_m_nondimensional = jsontree.get<tQvec>("re_m_nondimensional", 0);
         d.uav = jsontree.get<tGeomShape>("uav", 0);
 
 
@@ -116,7 +116,7 @@ int Handle_PP_Dims::save_json_to_filepath(const std::string filepath){
         jsontree.put<tGeomShape>("teta", dim.teta);
 
 
-        jsontree.put<tFlow>("initial_rho", dim.initial_rho);
+        jsontree.put<tQvec>("initial_rho", dim.initial_rho);
         jsontree.put<tGeomShape>("re_m_nondimensional", dim.re_m_nondimensional);
         jsontree.put<tGeomShape>("uav", dim.uav);
 

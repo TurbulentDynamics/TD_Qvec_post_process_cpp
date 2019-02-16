@@ -18,15 +18,9 @@ typedef const long int let_tNi;
 
 
 
-typedef float tNvec;
+typedef float tQvec;
 typedef float tForce;
 
-
-
-
-//The flow parameters
-typedef float tFlow;
-typedef const float let_tFlow;
 
 
 //The 3d parameters
@@ -44,7 +38,7 @@ typedef long int tGeomIndex;
 
 
 //The stepping vars
-typedef  int tStep;
+typedef int tStep;
 
 
 #endif /* define_typealias_h */

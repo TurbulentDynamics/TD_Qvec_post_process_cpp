@@ -51,8 +51,8 @@ struct PP_Dims {
     tGeomShape teta = 0;
 
 
-    tFlow initial_rho = 0;
-    tFlow re_m_nondimensional = 0;
+    tQvec initial_rho = 0;
+    tQvec re_m_nondimensional = 0;
     tGeomShape uav = 0;
 
 
@@ -74,7 +74,7 @@ struct PostProcess_Data_V3 {
     int save_ijk_grid, save_row_cols;
     int half_float;
 
-    tFlow nu;
+    tQvec nu;
     tGeomShape uav;
 };
 
@@ -124,7 +124,7 @@ public:
     }
 
     
-    void set_flow(tFlow initial_rho, tFlow re_m_nondimensional, tGeomShape uav){
+    void set_flow(tQvec initial_rho, tQvec re_m_nondimensional, tGeomShape uav){
         dim.initial_rho = initial_rho;
         dim.re_m_nondimensional = re_m_nondimensional;
         dim.uav = uav;
