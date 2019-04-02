@@ -11,6 +11,7 @@
 		2228011C2216CF6E00E7C419 /* td_Qvec_post_process.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222801152216CF6D00E7C419 /* td_Qvec_post_process.cpp */; };
 		2228011D2216CF6E00E7C419 /* main_Qvec_pp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222801192216CF6E00E7C419 /* main_Qvec_pp.cpp */; };
 		2228011E2216CF6E00E7C419 /* PostProcessing_Dims.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2228011A2216CF6E00E7C419 /* PostProcessing_Dims.cpp */; };
+		227B6DCA2253D957006F3187 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 227B6DC92253D957006F3187 /* jsoncpp.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +39,8 @@
 		222801212216D04900E7C419 /* Base_Dims.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Base_Dims.hpp; sourceTree = "<group>"; };
 		222801222216D04900E7C419 /* define_typealias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = define_typealias.h; sourceTree = "<group>"; };
 		222801232216D04900E7C419 /* PostProcessing_Dims.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PostProcessing_Dims.hpp; sourceTree = "<group>"; };
+		227B6DC82253D957006F3187 /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
+		227B6DC92253D957006F3187 /* jsoncpp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsoncpp.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 		2228011F2216CF8C00E7C419 /* Qvec_post_process */ = {
 			isa = PBXGroup;
 			children = (
+				227B6DC82253D957006F3187 /* json.h */,
+				227B6DC92253D957006F3187 /* jsoncpp.cpp */,
 				222801032216CF6D00E7C419 /* tests */,
 				222801182216CF6E00E7C419 /* CMakeLists.txt */,
 				222801192216CF6E00E7C419 /* main_Qvec_pp.cpp */,
@@ -157,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				227B6DCA2253D957006F3187 /* jsoncpp.cpp in Sources */,
 				2228011C2216CF6E00E7C419 /* td_Qvec_post_process.cpp in Sources */,
 				2228011D2216CF6E00E7C419 /* main_Qvec_pp.cpp in Sources */,
 				2228011B2216CF6E00E7C419 /* test_PostProcessing_Dims.cpp in Sources */,

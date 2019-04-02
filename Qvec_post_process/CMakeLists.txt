@@ -50,7 +50,7 @@ include_directories("../../include")
 include_directories("../local_include")
 
 
-add_library(objects OBJECT PostProcessing_Dims.cpp)
+add_library(objects OBJECT PostProcessing_Dims.cpp jsoncpp.cpp)
 add_executable(td_Qvec_post_process main_Qvec_pp.cpp $<TARGET_OBJECTS:objects>)
 
 target_link_libraries(td_Qvec_post_process ${MPI_LIBRARIES} ${Boost_LIBRARIES} Boost::program_options)

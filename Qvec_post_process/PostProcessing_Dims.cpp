@@ -12,8 +12,9 @@
 #include <stdlib.h>
 
 #include <iostream>
+#include <fstream>
 
-#include <boost/property_tree/json_parser.hpp>
+#include "json.h"
 
 
 
@@ -36,38 +37,43 @@ PP_Dims Handle_PP_Dims::get_from_json_filepath(const std::string filepath){
 
     try
     {
-        boost::property_tree::ptree jsontree;
-        boost::property_tree::read_json(filepath.c_str(), jsontree);
-
-        d.func = jsontree.get<std::string>("func", "");
-        d.dirname = jsontree.get<std::string>("dirname", "");
-        d.cut_at = jsontree.get<tNi>("cut_at", 0);
-        d.Q_output_length = jsontree.get<int>("Q_output_length", 0);
-        d.note = jsontree.get<std::string>("note", "");
+        std::ifstream in(filepath.c_str());
+        Json::Value dim_json;
+        in >> dim_json;
 
 
-        d.ngx = jsontree.get<t3d>("ngx", 0);
-        d.ngy = jsontree.get<t3d>("ngy", 0);
-        d.ngz = jsontree.get<t3d>("ngz", 0);
-
-        d.grid_x = jsontree.get<tNi>("grid_x", 0);
-        d.grid_y = jsontree.get<tNi>("grid_y", 0);
-        d.grid_z = jsontree.get<tNi>("grid_z", 0);
+        d.func = dim_json["function"].asString();
+        d.dirname = dim_json["dirname"].asString();
+        d.cut_at = (tNi)dim_json["cut_at"].asInt();
+        d.Q_output_length = (int)dim_json["Q_output_length"].asInt();
+        d.note = dim_json["note"].asString();
 
 
-        d.file_height = jsontree.get<tNi>("file_height", 0);
-        d.file_width = jsontree.get<tNi>("file_width", 0);
-        d.total_height = jsontree.get<tNi>("total_height", 0);
-        d.total_width = jsontree.get<tNi>("total_width", 0);
-
-        d.step = jsontree.get<tStep>("step", 0);
-        d.teta = jsontree.get<tGeomShape>("teta", 0);
+        d.ngx = (t3d)dim_json["ngx"].asInt();
+        d.ngy = (t3d)dim_json["ngy"].asInt();
+        d.ngz = (t3d)dim_json["ngz"].asInt();
 
 
-        d.initial_rho = jsontree.get<tQvec>("initial_rho", 0);
-        d.re_m_nondimensional = jsontree.get<tQvec>("re_m_nondimensional", 0);
-        d.uav = jsontree.get<tGeomShape>("uav", 0);
+        d.grid_x = (tNi)dim_json["grid_x"].asInt();
+        d.grid_y = (tNi)dim_json["grid_y"].asInt();
+        d.grid_z = (tNi)dim_json["grid_z"].asInt();
 
+
+        d.file_height = (tNi)dim_json["file_height"].asInt();
+        d.file_width = (tNi)dim_json["file_width"].asInt();
+        d.total_height = (tNi)dim_json["total_height"].asInt();
+        d.total_width = (tNi)dim_json["total_width"].asInt();
+
+
+        d.step = (tStep)dim_json["step"].asInt();
+        d.teta = (tGeomShape)dim_json["teta"].asDouble();
+
+
+        d.initial_rho = (tQvec)dim_json["initial_rho"].asDouble();
+        d.re_m_nondimensional = (tQvec)dim_json["re_m_nondimensional"].asDouble();
+        d.uav = (tGeomShape)dim_json["uav"].asDouble();
+
+        in.close();
 
         return d;
     }
@@ -84,46 +90,47 @@ PP_Dims Handle_PP_Dims::get_from_json_filepath(const std::string filepath){
 int Handle_PP_Dims::save_json_to_filepath(const std::string filepath){
     try
     {
+        Json::Value dim_json;
 
-        boost::property_tree::ptree jsontree;
-        jsontree.put<std::string>("name", get_name());
-        jsontree.put<std::string>("func", dim.func);
-        jsontree.put<std::string>("dirname", dim.dirname);
-        jsontree.put<tNi>("cut_at", dim.cut_at);
-        jsontree.put<tNi>("Q_output_length", dim.Q_output_length);
+        dim_json["name"] = get_name();
 
-
-        jsontree.put<std::string>("note", dim.note);
+        dim_json["function"] = dim.func;
+        dim_json["dirname"] = dim.dirname;
+        dim_json["cut_at"] = (int)dim.cut_at;
+        dim_json["Q_output_length"] = (int)dim.Q_output_length;
 
 
-        jsontree.put<t3d>("ngx", dim.ngx);
-        jsontree.put<t3d>("ngy", dim.ngy);
-        jsontree.put<t3d>("ngz", dim.ngz);
-
-        jsontree.put<tNi>("grid_x", dim.grid_x);
-        jsontree.put<tNi>("grid_y", dim.grid_y);
-        jsontree.put<tNi>("grid_z", dim.grid_z);
+        dim_json["note"] = dim.note;
 
 
+        dim_json["ngx"] = (int)dim.ngx;
+        dim_json["ngy"] = (int)dim.ngy;
+        dim_json["ngz"] = (int)dim.ngz;
 
-        
-        jsontree.put<tNi>("file_height", dim.file_height);
-        jsontree.put<tNi>("file_width", dim.file_width);
-        jsontree.put<tNi>("total_height", dim.total_height);
-        jsontree.put<tNi>("total_width", dim.total_width);
-
-        jsontree.put<tStep>("step", dim.step);
-        jsontree.put<tGeomShape>("teta", dim.teta);
+        dim_json["grid_x"] = (int)dim.grid_x;
+        dim_json["grid_y"] = (int)dim.grid_y;
+        dim_json["grid_z"] = (int)dim.grid_z;
 
 
-        jsontree.put<tQvec>("initial_rho", dim.initial_rho);
-        jsontree.put<tGeomShape>("re_m_nondimensional", dim.re_m_nondimensional);
-        jsontree.put<tGeomShape>("uav", dim.uav);
+        dim_json["file_height"] = (int)dim.file_height;
+        dim_json["file_width"] = (int)dim.file_width;
+        dim_json["total_height"] = (int)dim.total_height;
+        dim_json["total_width"] = (int)dim.total_width;
 
 
+        dim_json["step"] = (int)dim.step;
+        dim_json["teta"] = (double)dim.teta;
 
 
-        boost::property_tree::write_json(filepath.c_str(), jsontree);
+        dim_json["initial_rho"] = (double)dim.initial_rho;
+        dim_json["re_m_nondimensional"] = (double)dim.re_m_nondimensional;
+        dim_json["uav"] = (double)dim.uav;
+
+
+        std::ofstream out(filepath.c_str(), std::ofstream::out);
+        out << dim_json;
+        out.close();
+
         return 0;
     }
     catch(std::exception& e)
