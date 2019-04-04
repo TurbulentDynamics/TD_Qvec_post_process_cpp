@@ -12,6 +12,10 @@
 		2228011D2216CF6E00E7C419 /* main_Qvec_pp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222801192216CF6E00E7C419 /* main_Qvec_pp.cpp */; };
 		2228011E2216CF6E00E7C419 /* PostProcessing_Dims.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2228011A2216CF6E00E7C419 /* PostProcessing_Dims.cpp */; };
 		227B6DCA2253D957006F3187 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 227B6DC92253D957006F3187 /* jsoncpp.cpp */; };
+		227B6DD22254A469006F3187 /* Qvec_Calculations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 227B6DD02254A469006F3187 /* Qvec_Calculations.cpp */; };
+		227B6DD52254AA9E006F3187 /* Turb_Spec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 227B6DD42254AA9E006F3187 /* Turb_Spec.cpp */; };
+		227B6DD82254AB4C006F3187 /* Input_FILES_V4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 227B6DD72254AB4C006F3187 /* Input_FILES_V4.cpp */; };
+		227B6DDA2254B639006F3187 /* Qvec_Dims.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 227B6DD92254B639006F3187 /* Qvec_Dims.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +45,18 @@
 		222801232216D04900E7C419 /* PostProcessing_Dims.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PostProcessing_Dims.hpp; sourceTree = "<group>"; };
 		227B6DC82253D957006F3187 /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
 		227B6DC92253D957006F3187 /* jsoncpp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsoncpp.cpp; sourceTree = "<group>"; };
+		227B6DD02254A469006F3187 /* Qvec_Calculations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Qvec_Calculations.cpp; sourceTree = "<group>"; };
+		227B6DD12254A469006F3187 /* Qvec_Calculations.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Qvec_Calculations.hpp; sourceTree = "<group>"; };
+		227B6DD32254AA68006F3187 /* Turb_spec.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Turb_spec.hpp; sourceTree = "<group>"; };
+		227B6DD42254AA9E006F3187 /* Turb_Spec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Turb_Spec.cpp; sourceTree = "<group>"; };
+		227B6DD62254AB4C006F3187 /* Input_FILES_V4.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Input_FILES_V4.hpp; sourceTree = "<group>"; };
+		227B6DD72254AB4C006F3187 /* Input_FILES_V4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Input_FILES_V4.cpp; sourceTree = "<group>"; };
+		227B6DD92254B639006F3187 /* Qvec_Dims.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Qvec_Dims.cpp; sourceTree = "<group>"; };
+		227B6DDB2254B645006F3187 /* define_datastructures.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = define_datastructures.hpp; path = local_include/define_datastructures.hpp; sourceTree = SOURCE_ROOT; };
+		227B6DDC2254B645006F3187 /* Inline.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Inline.hpp; path = local_include/Inline.hpp; sourceTree = SOURCE_ROOT; };
+		227B6DDD2254B645006F3187 /* Qvec_Dims.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Qvec_Dims.hpp; path = include/Qvec_Dims.hpp; sourceTree = SOURCE_ROOT; };
+		227B6DE62256430E006F3187 /* Grid_Dims.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Grid_Dims.hpp; sourceTree = "<group>"; };
+		227B6DE722564318006F3187 /* Node_Dims.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Node_Dims.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,13 +92,18 @@
 		2228011F2216CF8C00E7C419 /* Qvec_post_process */ = {
 			isa = PBXGroup;
 			children = (
-				227B6DC82253D957006F3187 /* json.h */,
-				227B6DC92253D957006F3187 /* jsoncpp.cpp */,
 				222801032216CF6D00E7C419 /* tests */,
 				222801182216CF6E00E7C419 /* CMakeLists.txt */,
-				222801192216CF6E00E7C419 /* main_Qvec_pp.cpp */,
-				222801232216D04900E7C419 /* PostProcessing_Dims.hpp */,
+				227B6DC82253D957006F3187 /* json.h */,
+				227B6DC92253D957006F3187 /* jsoncpp.cpp */,
+				227B6DD32254AA68006F3187 /* Turb_spec.hpp */,
+				227B6DD12254A469006F3187 /* Qvec_Calculations.hpp */,
+				227B6DD92254B639006F3187 /* Qvec_Dims.cpp */,
 				2228011A2216CF6E00E7C419 /* PostProcessing_Dims.cpp */,
+				227B6DD02254A469006F3187 /* Qvec_Calculations.cpp */,
+				227B6DD42254AA9E006F3187 /* Turb_Spec.cpp */,
+				227B6DD72254AB4C006F3187 /* Input_FILES_V4.cpp */,
+				222801192216CF6E00E7C419 /* main_Qvec_pp.cpp */,
 			);
 			path = Qvec_post_process;
 			sourceTree = "<group>";
@@ -90,8 +111,11 @@
 		222801242216D05300E7C419 /* local_include */ = {
 			isa = PBXGroup;
 			children = (
-				222801212216D04900E7C419 /* Base_Dims.hpp */,
 				222801222216D04900E7C419 /* define_typealias.h */,
+				227B6DDB2254B645006F3187 /* define_datastructures.hpp */,
+				227B6DE62256430E006F3187 /* Grid_Dims.hpp */,
+				227B6DE722564318006F3187 /* Node_Dims.hpp */,
+				227B6DDC2254B645006F3187 /* Inline.hpp */,
 			);
 			path = local_include;
 			sourceTree = "<group>";
@@ -101,9 +125,21 @@
 			children = (
 				222801202216CFF500E7C419 /* README.md */,
 				222801242216D05300E7C419 /* local_include */,
+				227B6DDF22563879006F3187 /* include */,
 				2228011F2216CF8C00E7C419 /* Qvec_post_process */,
 				222801022216CF5D00E7C419 /* TD_Qvec_post_process */,
 			);
+			sourceTree = "<group>";
+		};
+		227B6DDF22563879006F3187 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				222801212216D04900E7C419 /* Base_Dims.hpp */,
+				227B6DDD2254B645006F3187 /* Qvec_Dims.hpp */,
+				227B6DD62254AB4C006F3187 /* Input_FILES_V4.hpp */,
+				222801232216D04900E7C419 /* PostProcessing_Dims.hpp */,
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,11 +198,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				227B6DD52254AA9E006F3187 /* Turb_Spec.cpp in Sources */,
 				227B6DCA2253D957006F3187 /* jsoncpp.cpp in Sources */,
 				2228011C2216CF6E00E7C419 /* td_Qvec_post_process.cpp in Sources */,
 				2228011D2216CF6E00E7C419 /* main_Qvec_pp.cpp in Sources */,
 				2228011B2216CF6E00E7C419 /* test_PostProcessing_Dims.cpp in Sources */,
+				227B6DD22254A469006F3187 /* Qvec_Calculations.cpp in Sources */,
+				227B6DD82254AB4C006F3187 /* Input_FILES_V4.cpp in Sources */,
 				2228011E2216CF6E00E7C419 /* PostProcessing_Dims.cpp in Sources */,
+				227B6DDA2254B639006F3187 /* Qvec_Dims.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +264,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../include,
+					../local_include,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -277,6 +321,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../include,
+					../local_include,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

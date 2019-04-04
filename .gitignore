@@ -7,6 +7,10 @@ turbSpec/
 turbSpec_*
 plot_*
 
+#jupyter
+not_tracked_*
+.ipynb_checkpoints
+
 
 #ide
 .DS_Store

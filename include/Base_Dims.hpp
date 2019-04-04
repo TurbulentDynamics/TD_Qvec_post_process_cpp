@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
-#include <sys/stat.h> // mkdir  --TODO replace with boost filesystem
+#include <sys/stat.h> // mkdir
 
 
 #include "define_typealias.h"
@@ -66,7 +66,6 @@ public:
 
 
     bool path_exists(std::string path) {
-        //Replace with Boost filesystem
 
         if (FILE *file = fopen(path.c_str(), "r")) {
             fclose(file);

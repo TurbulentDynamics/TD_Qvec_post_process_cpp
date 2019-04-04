@@ -46,15 +46,20 @@ endif()
 
 
 include_directories("${CMAKE_SOURCE_DIR}")
-include_directories("../../include")
+include_directories("../include")
 include_directories("../local_include")
 
 
-add_library(objects OBJECT PostProcessing_Dims.cpp jsoncpp.cpp)
+add_library(objects OBJECT Qvec_Calculations.cpp PostProcessing_Dims.cpp Qvec_Dims.cpp Turb_Spec.cpp Input_FILES_V4.cpp jsoncpp.cpp)
 add_executable(td_Qvec_post_process main_Qvec_pp.cpp $<TARGET_OBJECTS:objects>)
 
-target_link_libraries(td_Qvec_post_process ${MPI_LIBRARIES} ${Boost_LIBRARIES} Boost::program_options)
+target_link_libraries(td_Qvec_post_process ${Boost_LIBRARIES} Boost::program_options)
 target_compile_definitions(td_Qvec_post_process PRIVATE -DWITH_MPI=0)
+
+
+
+
+
 
 #----------------------------------
 # TESTS
