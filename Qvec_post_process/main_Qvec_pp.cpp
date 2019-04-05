@@ -19,8 +19,7 @@
 #endif
 
 
-#include <boost/program_options.hpp>
-
+#include "cxxopts.hpp"
 
 
 #include "define_typealias.h"
@@ -59,8 +58,7 @@ using namespace std;
 
 
 
-
-int main(int argc, const char * argv[]) {
+int main(int argc, char * argv[]) {
 
     int avail_nthreads = 1;
 #ifdef _OPENMP
@@ -70,72 +68,55 @@ int main(int argc, const char * argv[]) {
 
 
     int req_threads = 0;
-
-    bool print_to_screen = 0;
     bool overwrite = 0;
+    bool print_to_screen = 0;
 
     bool vort = 0;
     bool single = 0;
-
 
     std::string temporal_data_points_path = "";
 
     std::vector<std::string> dirs;
 
-    std::vector<turbSpec_point> turbSpec_points;
 
 
-    try
-    {
-        namespace po = boost::program_options;
+    cxxopts::Options options("MyProgram", "Turbulent Dynamics Qvec Post Processing");
 
-        po::options_description desc{"Options"};
-        desc.add_options()
-        ("help,h", "Lots of Arguments")
-        ("nthreads,n", po::value<int>(&req_threads), "Request number of OpenMP threads ")
-        ("overwrite,o", po::bool_switch(&overwrite), "Overwrite files if they exist ")
-        ("print,p", po::bool_switch(&print_to_screen), "Print")
+    options.add_options()
+    ("n,nthreads", "Request number of OpenMP threads", cxxopts::value<int>())
+    ("o,overwrite", "Overwrite files if they exist", cxxopts::value<bool>())
+    ("p,print", "Print to screen", cxxopts::value<bool>())
 
-        ("vort,v", po::bool_switch(&vort), "Vorticity (use center plane cut directory)")
-
-        ("uxuyuz,u", po::bool_switch(&single), "Single Vector Files")
+    ("v,vort", "Vorticity (use center plane cut directory)", cxxopts::value<bool>())
+    ("u,uxuyuz", "Single Vector Files", cxxopts::value<bool>())
 
 
-        //("dirs,d", po::value<std::vector<std::string>>(&dirs)->multitoken()->required(), "Directories")
-
-        ("dirs,d", po::value<std::vector<std::string>>(&dirs)->multitoken(), "Directories")
+    ("t,temporal_data_points_path", "Temporal Data Points file for Spectrum", cxxopts::value<std::string>())
 
 
-        ("temporal_data_points_path,t", po::value<std::string>(&temporal_data_points_path), "Temporal Data Points file for Spectrum")
-        ;
+    ("d,dirs", "Directories", cxxopts::value<std::vector<std::string>>(), "FILE")
+
+    ("h,help", "Print help")
+    ;
+
+    auto result = options.parse(argc, argv);
 
 
 
-        po::variables_map vm;
-        try {
-            po::store(po::parse_command_line(argc, argv, desc), vm);
+    if (result.count("nthreads")) req_threads = result["nthreads"].as<int>();
+    if (result.count("overwrite")) overwrite = result["overwrite"].as<bool>();
+    if (result.count("print")) print_to_screen = result["print"].as<bool>();
 
-            if ( vm.count("help")  )
-            {
-                std::cout << "Basic Command Line Parameter App" << std::endl << desc << std::endl;
-                return SUCCESS;
-            }
+    if (result.count("vort")) vort = result["vort"].as<bool>();
+    if (result.count("uxuyuz")) single = result["uxuyuz"].as<bool>();
 
-            // throws on error, so do after help in case there are any problems
-            po::notify(vm);
 
-        } catch (po::error& e) {
-            std::cerr << "ERROR: " << e.what() << std::endl << std::endl;
-            std::cerr << desc << std::endl;
-            return ERROR_IN_COMMAND_LINE;
-        }
-    }
-    catch(std::exception& e)
-    {
-        std::cerr << "Unhandled Exception reached parsing arguments: "
-        << e.what() << ", application will now exit" << std::endl;
-        return ERROR_UNHANDLED_EXCEPTION;
-    }
+    if (result.count("temporal_data_points_path")) temporal_data_points_path = result["temporal_data_points_path"].as<std::string>();
+
+
+    if (result.count("dirs")) dirs = result["dirs"].as<std::vector<std::string>>();
+
+
 
     //-------------------------------------------------------------
 
@@ -156,7 +137,7 @@ int main(int argc, const char * argv[]) {
 
 
 
-
+    std::vector<turbSpec_point> turbSpec_points;
 
     if (temporal_data_points_path != "")
     {
@@ -173,6 +154,7 @@ int main(int argc, const char * argv[]) {
 
     for (auto load_dir : dirs) {
 
+        std::cout<<load_dir<<std::endl;
 
         Handle_PP_Dims handle_pp;
         PP_Dims pp = handle_pp.get_from_node000_from_filepath(load_dir);
