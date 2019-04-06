@@ -218,8 +218,10 @@ public:
     Input_FILES_V4() {};
 
 
-
-    Input_FILES_V4(Grid_Dims grid, Node_Dims node){};
+    Input_FILES_V4(Grid_Dims _grid, Node_Dims _node){
+        grid = _grid;
+        node = _node;
+    };
 
 
     std::string format_step(tStep step){
