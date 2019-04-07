@@ -22,7 +22,7 @@ make
 
 ## Axes and XYZ Output Planes
 The axes and direction are defined with X positive to the right, Y positive downwards and Z positive to the back.  The following image shows the axes and the name of the output planes that cut throught the simulation space.
-![XYZ Planes](XYZ_Planes.jpg)
+![XYZ Planes](XYZ_planes.jpg)
 
 
 
