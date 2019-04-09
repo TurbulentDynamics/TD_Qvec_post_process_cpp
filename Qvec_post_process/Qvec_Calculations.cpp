@@ -14,7 +14,9 @@
 #include <string>
 
 
-
+#ifdef _OPENMP
+#include <omp.h>
+#endif
 
 #include "define_typealias.h"
 #include "define_datastructures.hpp"
@@ -191,8 +193,8 @@ void calc_vorticity(Input_FILES_V4 &input, const std::basic_string<char> &load_d
     std::string plotname = input.get_plot_type_from_directory(load_dir);
 
 
+#pragma omp parallel for
     for (tNi c = 1; c < pp.total_width; c++){
-
         for (tNi r = 1; r < pp.total_height; r++){
 
             tQvec uxx, uxy, uxz = 0.0;
@@ -247,7 +249,7 @@ void calc_rho_ux_uy_uz(int num_layers, tQvec **Q_plane, tForce **F_plane, tQvec 
 
     for (int layer = 0; layer < num_layers; layer++){
 
-
+#pragma omp parallel for
         for (tNi col = 0; col <= pp.total_width; col++){
             for (tNi row = 0; row <= pp.total_height; row++){
 

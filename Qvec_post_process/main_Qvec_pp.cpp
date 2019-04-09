@@ -60,14 +60,9 @@ using namespace std;
 
 int main(int argc, char * argv[]) {
 
-    int avail_nthreads = 1;
-#ifdef _OPENMP
-    avail_nthreads = omp_get_max_threads();
-#endif
 
 
-
-    int req_threads = 0;
+    int requested_threads = 0;
     bool overwrite = 0;
     bool print_to_screen = 0;
 
@@ -103,7 +98,7 @@ int main(int argc, char * argv[]) {
 
 
 
-    if (result.count("nthreads")) req_threads = result["nthreads"].as<int>();
+    if (result.count("nthreads")) requested_threads = result["nthreads"].as<int>();
     if (result.count("overwrite")) overwrite = result["overwrite"].as<bool>();
     if (result.count("print")) print_to_screen = result["print"].as<bool>();
 
@@ -124,12 +119,19 @@ int main(int argc, char * argv[]) {
 
     int nthreads = 1;
 #if _OPENMP
-    if (req_threads == 0) nthreads = avail_nthreads;
-    else if (req_threads > avail_nthreads) nthreads = avail_nthreads;
-    else nthreads = req_threads;
+    int avail_nthreads = omp_get_max_threads();
 
-    //Too many threads usually crash because of disk access
+
+    if (requested_threads == 0) nthreads = avail_nthreads;
+    else if (req_threads > avail_nthreads) nthreads = avail_nthreads;
+    else nthreads = requested_threads;
+
+    //Too many threads can crash because of disk access
     omp_set_num_threads(nthreads);
+
+    //Necessary for the "collapse" for loop openmp parts to work
+    omp_set_nested(1);
+
 #endif
     std::cout << "nthreads " << nthreads << std::endl;
 
@@ -194,6 +196,7 @@ int main(int argc, char * argv[]) {
 
 
         input.load_plane(num_layers, load_dir, Q_plane, F_plane, pp);
+
 
 
         calc_rho_ux_uy_uz(num_layers, Q_plane, F_plane, rho, ux, uy, uz, pp);

@@ -11,11 +11,14 @@
 #include <stdlib.h>
 #include <glob.h>
 
-
 #include <fstream>
 #include <iostream>
 #include <cfloat>
 #include <vector>
+
+#ifdef _OPENMP
+#include <omp.h>
+#endif
 
 
 
@@ -215,7 +218,7 @@ void Input_FILES_V4::load_plane(int num_layers, const std::basic_string<char> &l
 
 
 
-    //TODO load the glob of the directory contents
+#pragma omp parallel for collapse(3) schedule(dynamic)
     for (int idi = 0; idi < pp.ngx; idi++){
         for (int idj = 0; idj < pp.ngy; idj++){
             for (int idk = 0; idk < pp.ngz; idk++){
