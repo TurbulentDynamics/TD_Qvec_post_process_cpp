@@ -11,7 +11,7 @@ git clone https://github.com/TurbulentDynamics/TD_Rushton_Sample_Output_Qvec.git
 cmake .
 make
 
-./td_Qvec_post_process -v -d TD_Rushton_Sample_Output_Qvec/plot_slice.XZplane.V_4.Q_4.step_00000200.cut_70 
+./td_Qvec_post_process -v -d TD_Rushton_Sample_Output_Qvec/plot_slice.XZplane.V_4.Q_4.step_00002000.cut_133
 
 #The jupyter notebook in the "python" directory can be used to visualise the file created.
 ```
