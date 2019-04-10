@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2228011B2216CF6E00E7C419 /* test_PostProcessing_Dims.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222801132216CF6D00E7C419 /* test_PostProcessing_Dims.cpp */; };
-		2228011C2216CF6E00E7C419 /* td_Qvec_post_process.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222801152216CF6D00E7C419 /* td_Qvec_post_process.cpp */; };
 		2228011D2216CF6E00E7C419 /* main_Qvec_pp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222801192216CF6E00E7C419 /* main_Qvec_pp.cpp */; };
 		2228011E2216CF6E00E7C419 /* PostProcessing_Dims.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2228011A2216CF6E00E7C419 /* PostProcessing_Dims.cpp */; };
 		227B6DCA2253D957006F3187 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 227B6DC92253D957006F3187 /* jsoncpp.cpp */; };
@@ -200,9 +198,7 @@
 			files = (
 				227B6DD52254AA9E006F3187 /* Turb_Spec.cpp in Sources */,
 				227B6DCA2253D957006F3187 /* jsoncpp.cpp in Sources */,
-				2228011C2216CF6E00E7C419 /* td_Qvec_post_process.cpp in Sources */,
 				2228011D2216CF6E00E7C419 /* main_Qvec_pp.cpp in Sources */,
-				2228011B2216CF6E00E7C419 /* test_PostProcessing_Dims.cpp in Sources */,
 				227B6DD22254A469006F3187 /* Qvec_Calculations.cpp in Sources */,
 				227B6DD82254AB4C006F3187 /* Input_FILES_V4.cpp in Sources */,
 				2228011E2216CF6E00E7C419 /* PostProcessing_Dims.cpp in Sources */,

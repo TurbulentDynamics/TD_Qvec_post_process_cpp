@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[4]:
 
 
-import os, glob
+import os, sys, glob
 import math
 
 import numpy as np
@@ -16,14 +15,12 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 print("Matplotlib %s" % mpl.__version__)
-get_ipython().run_line_magic('matplotlib', 'inline')
 
-dirroot = "./TD_Rushton_Sample_Output_Qvec"
+dirroot = "."
 dirroot = os.environ.get("DIRROOT", dirroot)
-TD_Rushton_Sample_Output_Qvec
 
 
-directory = argv[1]
+directory = sys.argv[1]
 #directory = "TD_Rushton_Sample_Output_Qvec/plot_slice.XZplane.V_4.Q_4.step_00002000.cut_133"
 directory = os.environ.get("DIRECTORY", directory)
 
@@ -35,9 +32,8 @@ if os.path.isfile(filename):
     print("Found: %s" % filename)
 else:
     print("NOT FOUND: %s" % filename)
+    exit()
 
-
-# In[6]:
 
 
 CONTOUR = False
@@ -58,7 +54,7 @@ data = pd.DataFrame(npd.transpose())
 print(data.shape)
 
 
-DPI = 100
+DPI = 30
 if CONTOUR:
     mpl_fig = plt.figure(figsize=(20, 20), dpi=DPI)
 else:

@@ -1488,11 +1488,10 @@ inline void swap(Value& a, Value& b) { a.swap(b); }
 #pragma pack(push, 8)
 
 namespace Json {
-
 /** \brief Unserialize a <a HREF="http://www.json.org">JSON</a> document into a
  *Value.
  *
- * \deprecated Use CharReader and CharReaderBuilder.
+ * deprecated Use CharReader and CharReaderBuilder.
  */
 class JSON_API Reader {
 public:
