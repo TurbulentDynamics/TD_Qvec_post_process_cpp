@@ -123,7 +123,7 @@ int main(int argc, char * argv[]) {
 
 
     if (requested_threads == 0) nthreads = avail_nthreads;
-    else if (req_threads > avail_nthreads) nthreads = avail_nthreads;
+    else if (requested_threads > avail_nthreads) nthreads = avail_nthreads;
     else nthreads = requested_threads;
 
     //Too many threads can crash because of disk access
