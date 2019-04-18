@@ -28,7 +28,7 @@ The angled <name>.rotational_capture.V_4.Q_<len>.step_<num>.angle_<num>.blade_id
 ## Get Started
 ```
 cd Qvec_post_process
-# Clone some sample Qvec data of a [Rushton Turbine](https://github.com/TurbulentDynamics/TD_GeomInput_Rushton_Turbine/raw/master/Turbine.png)
+# Clone some sample Qvec data of a Rushton Turbine
 git clone https://github.com/TurbulentDynamics/TD_Rushton_Sample_Output_Qvec.git
 cmake .
 make

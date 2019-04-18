@@ -192,6 +192,13 @@ void calc_vorticity(Input_FILES_V4 &input, const std::basic_string<char> &load_d
 
     std::string plotname = input.get_plot_type_from_directory(load_dir);
 
+    if (!(plotname == "XYplane" || plotname == "XZplane" || plotname == "YZplane" || plotname == "rotational_capture")) {
+        std::cout << "Cant deal with: " << plotname << std::endl;
+        return;
+    }
+
+
+
 #pragma omp parallel for
     for (tNi c = 1; c < pp.total_width; c++){
         for (tNi r = 1; r < pp.total_height; r++){
@@ -223,10 +230,6 @@ void calc_vorticity(Input_FILES_V4 &input, const std::basic_string<char> &load_d
 
 
             
-            else {
-                std::cout << "Cant deal with: " << plotname << std::endl;
-                return;
-            }
 
             tQvec uyz_uzy = uyz - uzy;
             tQvec uzx_uxz = uzx - uxz;
